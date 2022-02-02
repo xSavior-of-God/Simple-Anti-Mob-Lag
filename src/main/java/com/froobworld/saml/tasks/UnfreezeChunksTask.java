@@ -32,9 +32,7 @@ public class UnfreezeChunksTask implements Runnable {
                 List<FrozenChunkCache> cacheCopy = new ArrayList<>(frozenChunkCaches);
                 for(FrozenChunkCache frozenChunkCache : cacheCopy) {
                     List<ChunkCoordinates> coordsCopy = new ArrayList<>(frozenChunkCache.getFrozenChunkCoordinates());
-                    coordsCopy.forEach(c -> c.getWorld().getChunkAtAsync(
-                            c.getX(), c.getZ(), false, new UnfreezeChunkConsumer(saml, frozenChunkCache)
-                    ));
+                    coordsCopy.forEach(c -> c.getWorld().getChunkAtAsync(c.getX(), c.getZ(), false, new UnfreezeChunkConsumer(saml, frozenChunkCache)));
                 }
             } else {
                 paper = false;
