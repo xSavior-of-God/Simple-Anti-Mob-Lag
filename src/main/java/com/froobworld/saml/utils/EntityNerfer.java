@@ -13,6 +13,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+
 public class EntityNerfer {
     private static Class ENTITY_INSENTIENT_CLASS;
     private static Method LIVING_ENTITY_GET_HANDLE_METHOD;
